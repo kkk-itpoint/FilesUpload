@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %} Read Profile {% endblock %}
+
+{% block content %}
+    {% if row %}
+        <table border="1" cellpadding="10" align="center">
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Technology</th>
+                <th>Email</th>
+                <th>Photo</th>
+            </tr>
+            <tr>
+                <td>{{row.fn}}</td>
+                <td>{{row.ln}}</td>
+                <td>{{row.tech}}</td>
+                <td>{{row.email}}</td>
+                <td>{{row.photo}}</td>
+            </tr>
+        </table>
+    {% else %}
+        <h3 align="center">Books not found</h3><br><br>
+    {% endif %}
+    <div class="rs-btn">
+        <a href="{% url 'index' %}">Back</a>
+    </div>
+{% endblock %}
